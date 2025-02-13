@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl4n2flmdrd06"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bi0ew"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961994, 0.27307, 0, -0.27307, 0.961994, 0, 1.33555, 5.47261)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_bi0ew")
