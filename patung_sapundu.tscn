@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2uhines3tqvd"]
+
+[ext_resource type="PackedScene" uid="uid://ccy1ns4lhkinh" path="res://art/gltf/patung_sapundu.glb" id="1_jfr5d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1e0w"]
+
+[node name="Patung Sapundu" type="RigidBody3D"]
+
+[node name="patung_sapundu" parent="." instance=ExtResource("1_jfr5d")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.44, 0, 0, 0, 4.815, 0, 0, 0, 1, 0, 2.41735, 0)
+shape = SubResource("BoxShape3D_p1e0w")
