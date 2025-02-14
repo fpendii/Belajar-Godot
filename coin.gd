@@ -10,3 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(ROT_SPEED))
+
+func _on_body_entered(body: Node3D) -> void:
+	get_tree().get_root().get_node("Level1").add_point()
+	queue_free()

@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl4n2flmdrd06"]
+[gd_scene load_steps=11 format=3 uid="uid://dl4n2flmdrd06"]
 
+[ext_resource type="Script" path="res://level_1.gd" id="1_di4td"]
 [ext_resource type="PackedScene" uid="uid://b8fikd574fm6h" path="res://block.tscn" id="1_ugman"]
 [ext_resource type="PackedScene" uid="uid://ccy1ns4lhkinh" path="res://art/gltf/patung_sapundu.glb" id="2_epdf2"]
 [ext_resource type="PackedScene" uid="uid://cclkboc5g884c" path="res://steve.tscn" id="3_0b00l"]
 [ext_resource type="Texture2D" uid="uid://drflsdkplpoxf" path="res://icon.svg" id="4_ncra1"]
 [ext_resource type="Script" path="res://icon.gd" id="5_uv0aw"]
-
-[sub_resource type="GDScript" id="GDScript_gu87v"]
-resource_name = "Level1_scr"
+[ext_resource type="PackedScene" uid="uid://bwfqdx8mj35ik" path="res://coin.tscn" id="6_mxg2e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bi0ew"]
 size = Vector3(10, 0.5, 10)
@@ -15,8 +14,10 @@ size = Vector3(10, 0.5, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lgs7a"]
 size = Vector3(10, 0.5, 10)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0h5py"]
+
 [node name="Level1" type="Node3D"]
-script = SubResource("GDScript_gu87v")
+script = ExtResource("1_di4td")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.991312, 0.13153, 0, -0.13153, 0.991312, 0, 4.27517, 11.9005)
@@ -63,3 +64,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21212, 2.68111)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51754, 1.06584, 3.30592)
 texture = ExtResource("4_ncra1")
 script = ExtResource("5_uv0aw")
+
+[node name="Coin1" parent="." instance=ExtResource("6_mxg2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52084, 1.37851, 3.34656)
+
+[node name="Coin2" parent="." instance=ExtResource("6_mxg2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98632, 0.948492, 1.59828)
+
+[node name="Coin3" parent="." instance=ExtResource("6_mxg2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24993, 0.948492, 4.09773)
+
+[node name="point_ui" type="CanvasLayer" parent="."]
+
+[node name="point_label" type="Label" parent="point_ui"]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.04
+anchor_right = 0.199
+anchor_bottom = 0.192
+offset_left = 0.0480003
+offset_top = 0.079998
+offset_right = -96.248
+offset_bottom = -47.416
+scale = Vector2(1.935, 1.935)
+text = "0"
+label_settings = SubResource("LabelSettings_0h5py")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

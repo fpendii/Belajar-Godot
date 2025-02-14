@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b41d156pxsgvn"]
+
+[ext_resource type="ArrayMesh" uid="uid://ckvd8bpuffcgx" path="res://art/Models/env/pohon_tinggi.res" id="1_0byks"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rknie"]
+radius = 2.853
+height = 24.53
+
+[node name="Pohon" type="StaticBody3D"]
+transform = Transform3D(0.017, 0, 0, 0, 0.017, 0, 0, 0, 0.017, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_0byks")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.18509, 0)
+shape = SubResource("CapsuleShape3D_rknie")

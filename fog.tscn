@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk27nam3bb4qh"]
+
+[sub_resource type="Environment" id="Environment_tlf3g"]
+background_mode = 1
+background_color = Color(0.401994, 0.285406, 0.128138, 1)
+
+[node name="Fog" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tlf3g")

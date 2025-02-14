@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdb1kkx26dypo"]
+
+[ext_resource type="ArrayMesh" uid="uid://ir7080utg3lk" path="res://art/Models/env/ground.res" id="1_e7kx1"]
+[ext_resource type="PackedScene" uid="uid://b41d156pxsgvn" path="res://pohon.tscn" id="2_bepky"]
+[ext_resource type="PackedScene" uid="uid://d2y06uvaiokgh" path="res://art/Models/patung_sapundu_1.glb" id="3_s474h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7crbw"]
+
+[node name="Level2" type="Node3D"]
+transform = Transform3D(3.73253, 0, 0, 0, 3.73253, 0, 0, 0, 3.73253, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = ExtResource("1_e7kx1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.83114, 0.556064, 0, -0.556064, 0.83114, 0, -1.8163, 0)
+visible = false
+light_color = Color(0.871892, 0.577938, 0.2147, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.267915, 0, 0, 0, 0.207235, 0.169801, 0, -0.169801, 0.207235, 0.00271168, 0.269378, 0.860297)
+far = 3946.25
+
+[node name="GrupPohon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0302189, 0)
+
+[node name="Pohon1" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.0883759, 0.0111332, -0.035501)
+
+[node name="Pohon2" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.118536, -0.000732303, -0.386922)
+
+[node name="Pohon3" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.216569, -0.000732303, -0.465175)
+
+[node name="Pohon4" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.47805, -0.000732303, -0.423498)
+
+[node name="Pohon5" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.511392, -0.000732303, -0.00116909)
+
+[node name="Pohon6" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.247437, -0.000732303, -0.112308)
+
+[node name="Pohon7" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.255467, -0.000732303, -0.156764)
+
+[node name="Pohon8" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.552764, -0.000732303, -0.262346)
+
+[node name="Pohon9" parent="GrupPohon" instance=ExtResource("2_bepky")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.53656, -0.000732303, 0.0455315)
+
+[node name="patung_sapundu_1" parent="." instance=ExtResource("3_s474h")]
+transform = Transform3D(0.026896, 0, -0.0132893, 0, 0.03, 0, 0.0132893, 0, 0.026896, 0.241414, 0, 0.0727264)
+
+[node name="patung_sapundu_2" parent="." instance=ExtResource("3_s474h")]
+transform = Transform3D(0.0161658, 0, 0.0252719, 0, 0.03, 0, -0.0252719, 0, 0.0161658, -0.221237, 0, 0.0888499)
+
+[node name="patung_sapundu_3" parent="." instance=ExtResource("3_s474h")]
+transform = Transform3D(0.0286859, 0, -0.00878166, 0, 0.03, 0, 0.00878166, 0, 0.0286859, 0.0147835, 0, 0.041351)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000907362, 0.584019, 1.03226)
+light_color = Color(0.395517, 0.498927, 0.712541, 1)
+light_energy = 0.208
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0346887, 0.228934, -1.19027)
+light_color = Color(0.650524, 0.460156, 0.165404, 1)
+light_energy = 2.398
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000956095, -0.510027, 0.291901)
+mesh = SubResource("BoxMesh_7crbw")
