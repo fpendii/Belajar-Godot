@@ -5,14 +5,12 @@ resource_name = "steve.gd"
 script/source = "extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 1
+const JUMP_VELOCITY = 2
 
+@export var push_strength: float = 10.0
 
 func _physics_process(delta: float) -> void:
-	
-	
-	
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -32,11 +30,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 	move_and_slide()
 	
 	#Make Camera Controller Match the Position Of myselft
-	$Camera_Controller.position = lerp($Camera_Controller.position,position,0.05)
+	$Camera_Controller.position = lerp($Camera_Controller.position,position,0.04)
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k63y0"]
@@ -63,5 +60,5 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 0.956003, 0.293356, 0, -0.293356, 0.956003, 0, 3.08233, 7.8043)
 
 [node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
-transform = Transform3D(1, 0, 0, 0, 0.999543, -0.0302419, 0, 0.0302419, 0.999543, 0, -0.311621, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999543, -0.0302419, 0, 0.0302419, 0.999543, 0, -0.421058, -6.60359)
 current = true
